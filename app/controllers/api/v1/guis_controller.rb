@@ -1,6 +1,6 @@
 class Api::V1::GuisController < ApplicationController
 
- before_action :set_gui, only: %i[show update] # show update destroy
+ before_action :set_gui, only: %i[show update destroy] # show update destroy
 
  def index
   @guis = Gui.all 
@@ -26,6 +26,10 @@ class Api::V1::GuisController < ApplicationController
   else
     render json: @gui.errors, status: :unprocessable_entity
   end
+ end
+
+ def destroy
+  @gui.destroy!
  end
 
 private
