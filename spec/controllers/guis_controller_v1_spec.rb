@@ -28,4 +28,13 @@ RSpec.describe Api::V1::GuisController, type: :controller do
     end
   end
 
+  describe 'PATCH /api/v1/guis/id' do
+    it 'Consegue atualizar um gui e retornar status 200?' do
+      gui = Gui.last
+      patch :update,params: {gui: {project: 'matte', description: 'ambiente moderno'}, id: gui.id}
+      expect(response.body).to include_json(project: 'matte')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
