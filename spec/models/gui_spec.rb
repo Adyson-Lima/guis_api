@@ -11,6 +11,11 @@ RSpec.describe Gui, type: :model do
       expect(@gui.project).to eq('kde')
     end
 
+    it 'description consegue ser preenchido?' do
+      @gui.description = ''
+      expect(@gui.description).to eq('interface rica em recursos')
+    end
+
   end
 
 end
