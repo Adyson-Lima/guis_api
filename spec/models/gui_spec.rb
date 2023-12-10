@@ -7,7 +7,7 @@ RSpec.describe Gui, type: :model do
   describe 'Testes de preenchimento do model Gui' do
 
     it 'project consegue ser preenchido?' do
-      @gui.project = ''
+      @gui.project = 'kde'
       expect(@gui.project).to eq('kde')
     end
 
