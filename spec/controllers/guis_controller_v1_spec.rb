@@ -37,4 +37,13 @@ RSpec.describe Api::V1::GuisController, type: :controller do
     end
   end
 
+  describe 'DELETE /api/v1/guis/id' do
+    it 'Consegue excluir um gui e retornar status 204?' do
+      gui = Gui.last
+      delete :destroy, params: {id: gui.id}
+      expect(Gui.all).not_to include(gui)
+      expect(response).to have_http_status(204)
+    end
+  end
+
 end
