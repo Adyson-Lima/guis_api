@@ -18,4 +18,14 @@ RSpec.describe Gui, type: :model do
 
   end
 
+  describe 'Testes de validação do model Gui' do
+
+    it 'gui valido com todos os campos preenchidos?' do
+      @gui.project = ''
+      @gui.description = ''
+      expect(@gui).to be_valid
+    end
+
+  end
+
 end
