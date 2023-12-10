@@ -11,6 +11,15 @@ class Api::V1::GuisController < ApplicationController
   render json: @gui
  end
 
+ def create
+  @gui = Gui.new(gui_params)
+  if @gui.save
+    render json: @gui, status: :created, location: api_v1_gui_url(@gui)
+  else
+    render json: @gui.errors, status: :unprocessable_entity
+  end
+ end
+
 private
 
 def set_gui
