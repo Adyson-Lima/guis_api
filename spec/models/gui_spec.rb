@@ -26,6 +26,11 @@ RSpec.describe Gui, type: :model do
       expect(@gui).to be_valid
     end
 
+    it 'gui invalido sem todos os campos preenchidos?' do
+      gui = Gui.new
+      expect(gui).to be_valid
+    end
+
   end
 
 end
