@@ -12,7 +12,7 @@ RSpec.describe Gui, type: :model do
     end
 
     it 'description consegue ser preenchido?' do
-      @gui.description = ''
+      @gui.description = 'interface rica em recursos'
       expect(@gui.description).to eq('interface rica em recursos')
     end
 
